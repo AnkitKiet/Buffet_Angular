@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,16 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Buffet';
-  check=true;
  url=window.location.href;
-
+checkNav=false;
 constructor(){}
 
   ngOnInit() {
-    if(this.url.search(/login/)!=-1){
-      this.check=false;
-      console.log("hello");
-    }else{
-      this.check=true;
-    }
+  this.callFun(true);
   }
+
+callFun(value:boolean):void{
+  this.checkNav=value;
+}
 
 }
