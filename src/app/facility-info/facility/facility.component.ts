@@ -19,9 +19,9 @@ data : any ={};
 public menu : menu;
 ELEMENT_DATA: menu[];
   constructor(private http:Http) { 
+    this.getMenu();
 
     this.menu={id:'',menu_name:'',category_name:'',sub_category_name:'',price:'',size:'',offer_id:'',topping_count:'',image:'',category_id:'', cat_id:'',topping_id:'', topping_name:'',offer_details:'',discount_price:''};
-    this.getContacts();
 
   }
 
@@ -39,18 +39,18 @@ ELEMENT_DATA: menu[];
    * be able to query its view for the initialized paginator.
    */
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
   }
 
 getData(){
   return this.http.get(this.apiurl).map((res:Response)=>res.json());
 }
- getContacts(){
+ getMenu(){
    this.getData().subscribe(data=>{
- this.ELEMENT_DATA=data.message.Pizza;
- console.log("ele"+this.ELEMENT_DATA);
+ const ELEMENT_DATA_temp:menu[] =[...data.message.Sides, ...data.message.Pizza];
+ this.ELEMENT_DATA=ELEMENT_DATA_temp;
+ this.dataSource = new MatTableDataSource<menu>(this.ELEMENT_DATA);
+ this.dataSource.paginator = this.paginator;
 
-      
    })
  }
 }

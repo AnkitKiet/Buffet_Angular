@@ -50,7 +50,8 @@
 
     <ng-container matColumnDef="image">
       <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Image </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.image}} </mat-cell>
+      <img style="width:10%;height:10%;" *matCellDef="let element" mat-card-image src={{element.image}}>
+
     </ng-container>
 
     <ng-container matColumnDef="topping_name">
