@@ -1,3 +1,88 @@
-<p>
-  facility works!
-</p>
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="manu_name">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;">Menu Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.menu_name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="category_name">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Category Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.category_name}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="sub_category_name">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Sub Category Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.sub_category_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="size">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Size </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.size}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="offer_id">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Offer Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.offer_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="topping_count">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Topping Count </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.topping_count}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Image </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.image}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="topping_name">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Topping Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.topping_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="offer_details">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Offer Details </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.offer_details}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="discount_price">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Discount Price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.discount_price}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+
+  <mat-paginator #paginator
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 20]"
+  [showFirstLastButtons]="true">
+</mat-paginator>
+
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

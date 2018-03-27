@@ -9,11 +9,10 @@ import {AppComponent} from '../../app.component';
 export class DashboardComponent implements OnInit {
 
   constructor(private appcomponent:AppComponent) {
-    this.appcomponent.callFun(true);
-
  }
 
   ngOnInit() {
+      this.appcomponent.callFun(true);
 
   }
 
