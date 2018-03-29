@@ -4,12 +4,12 @@
             <div class="avatar"></div>
             <div class="form-box">
                     <input type="password" [(ngModel)]="user.password" placeholder="password">
-                    <button class="btn btn-info btn-block login" (click)="onSubmit()" type="submit">Login</button>
+                    <button class="btn btn-danger btn-block login" (click)="onSubmit()" type="submit">Login</button>
             </div>
         </div>
-				<div class="row" *ngIf="showProgress">
+<div class="row" *ngIf="showProgress">
 				<mat-progress-bar  mode="indeterminate"></mat-progress-bar>
-			</div>
+</div>
 
 
 </div>
