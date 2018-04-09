@@ -5,6 +5,7 @@ import { RouterModule, Routes ,PreloadAllModules} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {FacilityInfoModule} from './facility-info/facility-info.module';
+import {ReportsModule} from './reports/reports.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +27,7 @@ import {CdkTableModule} from '@angular/cdk/table';
     CommonModule,
     DashboardModule,
     FacilityInfoModule,
+    ReportsModule,
     FormsModule,
     HttpModule,
     MatSnackBarModule,

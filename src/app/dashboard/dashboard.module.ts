@@ -5,6 +5,7 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
 import {MatTabsModule,MatCardModule} from '@angular/material';
 import {FacilityInfoModule} from '../facility-info/facility-info.module';
 import {ViewMenuModule} from '../view-menu/view-menu.module';
+import {ReportsModule} from '../reports/reports.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -13,6 +14,7 @@ import {ViewMenuModule} from '../view-menu/view-menu.module';
     MatTabsModule,
     MatCardModule,
     FacilityInfoModule,
+    ReportsModule,
     ViewMenuModule,
     CommonModule
   ],

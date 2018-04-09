@@ -4,6 +4,7 @@ import {DashboardModule} from './dashboard/dashboard.module';
 import {FacilityInfoModule} from './facility-info/facility-info.module';
 import {ViewMenuModule} from './view-menu/view-menu.module';
 import {LoginComponent} from './login/login.component';
+import { ReportsModule } from './reports/reports.module';
 const appRoutes: Routes = [
   {
     path: 'dashboard',
@@ -23,6 +24,11 @@ const appRoutes: Routes = [
     path: 'editmenu',
     component: ViewMenuModule,
     loadChildren:'./view-menu/view-menu.module#ViewMenuModule'
+  },
+  {
+    path: 'reports',
+    component: ReportsModule,
+    loadChildren:'./reports/reports.module#ReportsModule'
   }
 
 
