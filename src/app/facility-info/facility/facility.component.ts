@@ -29,7 +29,7 @@ ELEMENT_DATA: menu[];
 
     
   }
-  displayedColumns = ['id', 'manu_name', 'category_name', 'sub_category_name','price','size','offer_id','topping_count','image','topping_name','offer_details','discount_price'];
+  displayedColumns = ['manu_name', 'category_name', 'sub_category_name','price','size','offer_id','topping_count','image','topping_name','offer_details','discount_price'];
   dataSource = new MatTableDataSource<menu>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
