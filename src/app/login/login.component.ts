@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import {loginInterface} from './loginInterface';
 import {MatSnackBar} from '@angular/material';
 import {AppComponent} from '../app.component';
@@ -6,6 +6,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Observable} from 'rxjs/Rx';
+import {SESSION_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { RouterModule, Routes ,PreloadAllModules } from '@angular/router';
 import {Router} from '@angular/router';
 this.router= Router;
@@ -22,10 +23,10 @@ data : any ={};
 public showProgress=false;
 public user : loginInterface;
 
-  constructor(private http:Http,private route:Router,public snackBar: MatSnackBar,private appcomponent:AppComponent) {
+  constructor(private http:Http,@Inject(SESSION_STORAGE) private storage: WebStorageService,private route:Router,public snackBar: MatSnackBar,private appcomponent:AppComponent) {
     this.user = {password:''};
   }
-
+     
   ngOnInit() {
     this.appcomponent.callFun(false);
   }
@@ -46,6 +47,7 @@ onSubmit(){
   this.getData(this.user).subscribe(data=>{
     this.data=data;
     if(data.error=="false"){
+      this.storage.set("login", true);
       this.showProgress=false;
       this.route.navigateByUrl('/dashboard');
     }else{

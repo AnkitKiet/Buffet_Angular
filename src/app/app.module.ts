@@ -15,6 +15,7 @@ import {MatProgressBarModule,MatSnackBarModule,MatRippleModule,MatTabsModule,Mat
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {CdkTableModule} from '@angular/cdk/table';
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {CdkTableModule} from '@angular/cdk/table';
     CdkTableModule,
     MatCardModule,
     MatRippleModule,
+    StorageServiceModule,
     BrowserAnimationsModule
   ],
   providers: [],
