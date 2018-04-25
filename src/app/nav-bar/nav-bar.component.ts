@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   }
 
   public logout(){
+    this.storage.set("login",false);
 console.log(this.storage.get("login"));
 
   }

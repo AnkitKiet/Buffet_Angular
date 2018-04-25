@@ -28,6 +28,9 @@ public user : loginInterface;
   }
      
   ngOnInit() {
+    if(this.storage.get("login")){
+      this.route.navigateByUrl("/dashboard");
+    }
     this.appcomponent.callFun(false);
   }
 
