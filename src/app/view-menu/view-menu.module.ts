@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import {ViewMenuRoutingModule} from './view-menu-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule,MatSelectModule} from '@angular/material';
 @NgModule({
   declarations: [MenuEditComponent],
   imports: [
@@ -11,7 +11,8 @@ import {MatInputModule} from '@angular/material';
     ViewMenuRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   exports:[MenuEditComponent]
 })
