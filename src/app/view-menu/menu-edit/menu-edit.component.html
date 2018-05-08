@@ -1,3 +1,99 @@
-<p>
-  menu-edit works!
-</p>
+<!--Category CMS-->
+<h5 style="text-align: center">
+  <u>Create New Category</u>
+</h5>
+<div class="row" style="padding: 10px;">
+  <form class="example-form">
+    <div class="row">
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Category Name">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Sub Category Name">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-9"></div>
+      <div class="form-group col-xs-3">
+        <button class="btn btn-success btn-block" (click)="onSubmitCategory()" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!--Custom Horizontal Line Seperator-->
+<hr class="customHR">
+<h5 style="text-align: center;">
+  <u>Create New Menu</u>
+</h5>
+<!---Menu CMS-->
+<div class="row" style="padding: 10px;">
+  <form class="example-form">
+    <div class="row">
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Size">
+            <mat-option *ngFor="let size of Sizes" [value]="size.value">
+              {{ size.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Menu Name">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Offer">
+            <mat-option *ngFor="let offer of Offers" [value]="offer.value">
+              {{ offer.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Price">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Cateogry">
+            <mat-option *ngFor="let category of ELEMENT_DATA" [value]="category.value">
+              {{ category.category_name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group col-xs-6">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Toppings">
+            <mat-option *ngFor="let offer of Offers" [value]="offer.value">
+              {{ offer.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-9">
+        <div class="form-group col-xs-3">
+          <button class="btn btn-success btn-block" (click)="onSubmitMenu()" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</div>

@@ -32,6 +32,13 @@ public user : loginInterface;
       this.route.navigateByUrl("/dashboard");
     }
     this.appcomponent.callFun(false);
+    console.log(this.storage.get("login"));
+    
+    if((this.storage.get("login"))){
+      console.log("inside");
+      
+        this.route.navigateByUrl('dashboard');
+    }
   }
 
 getData(body: Object): Observable<user> {
