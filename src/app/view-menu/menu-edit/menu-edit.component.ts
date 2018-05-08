@@ -14,6 +14,7 @@ export class MenuEditComponent implements OnInit {
 
   private apiurl = 'http://139.59.5.188:8081/getallcategory';
   data: any = {};
+  categorySelect:string;
   public category: category;
   ELEMENT_DATA: category[];
 
@@ -37,6 +38,10 @@ export class MenuEditComponent implements OnInit {
       
     })
   }
+
+getSelectedCategory(event:any){    
+  console.log(event.value);
+}
 
   Sizes = [
     { value: 'Regular', viewValue: 'Regular' },
