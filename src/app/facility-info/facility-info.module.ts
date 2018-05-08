@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FacilityComponent } from './facility/facility.component';
 import { FacilityRoutingModule } from './facility-routing.module';
 import {FacilityTestComponent} from './facility/facility-test/facility-test.component';
-import {MatTableModule,MatPaginatorModule} from '@angular/material';
+import {MatTableModule,MatPaginatorModule,MatCardModule} from '@angular/material';
 
 
 @NgModule({
@@ -12,9 +12,10 @@ import {MatTableModule,MatPaginatorModule} from '@angular/material';
   imports: [
     FacilityRoutingModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule
   ],
-  exports:[FacilityComponent]
+  exports:[FacilityComponent,FacilityTestComponent]
 
 })
 export class FacilityInfoModule { }
