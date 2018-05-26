@@ -95,6 +95,25 @@
         </div>
       </div>
 
+      <hr class="customHR">
+<h5 style="text-align: center;">
+  <u>Delete Menu</u>
+</h5>
+<div class="row">
+  <div class="form-group col-xs-6">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Select A Menu" [(ngModel)]="dataMenu.menu_id" name="menu_id">
+          <mat-option *ngFor="let menu of ELEMENT_DATA_MENU" [value]="menu.id">
+            {{ menu.category_name }}  ,  {{menu.sub_category_name}} , {{menu.menu_name}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group col-xs-3"></div>
+  <div class="form-group col-xs-3">
+    <button class="btn btn-danger btn-block" (click)="onDelete()" type="submit">Delete</button>
+  </div>
+</div>
 
   </form>
 </div>
