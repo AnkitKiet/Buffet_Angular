@@ -120,6 +120,7 @@ getAllMenu(){
         this.postMenuData.size = '';
         this.postMenuData.offer_id = '';
         this.postMenuData.toppings_allowed = '';
+        this.getAllMenu();
 
       } else {
         this.openSnackBar(this.data.message, "Retry");

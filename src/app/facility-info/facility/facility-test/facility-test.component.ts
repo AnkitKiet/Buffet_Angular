@@ -32,7 +32,7 @@ postData:any;
 
   ngOnInit() {
   }
-  displayedColumns = ['manu_name', 'category_name', 'sub_category_name','price','size','offer_id','topping_count','topping_name','offer_details','discount_price','Confirm'];
+  displayedColumns = ['order_id', 'user_phn_number', 'user_alternate_phn_number','user_name','no_of_items','user_address','delivery_centre','order_date','cooking_instructions','total_price','Confirm','Cancel'];
   dataSource = new MatTableDataSource<order>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -60,7 +60,9 @@ getMenu(){
  onSelect(data:any){
    this.openSnackBar("Order "+data+" Confirmed","Done");
  }
-
+ onSelectCancel(data:any){
+  this.openSnackBar("Order "+data+" Canceled","Done");
+}
 
  openSnackBar(message: string, action: string) {
   let snackBarRef = this.snackBar.open(message, action, {

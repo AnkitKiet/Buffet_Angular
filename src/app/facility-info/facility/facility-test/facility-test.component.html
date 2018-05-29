@@ -8,55 +8,55 @@
     
 
     <!-- Name Column -->
-    <ng-container matColumnDef="manu_name">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;">Menu Name </mat-header-cell>
+    <ng-container matColumnDef="order_id">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;">Order Id </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.order_id}} </mat-cell>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="category_name">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Category Name </mat-header-cell>
+    <ng-container matColumnDef="user_phn_number">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Phone Number </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.user_phn_number}} </mat-cell>
     </ng-container>
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="sub_category_name">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Sub Category Name </mat-header-cell>
+    <ng-container matColumnDef="user_alternate_phn_number">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Alternate Number </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.user_alternate_phn_number}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="price">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Price </mat-header-cell>
+    <ng-container matColumnDef="user_name">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Name </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.user_name}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="size">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Size </mat-header-cell>
+    <ng-container matColumnDef="no_of_items">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Number Of Items </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.no_of_items}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="offer_id">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Offer Id </mat-header-cell>
+    <ng-container matColumnDef="user_address">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> User Address </mat-header-cell>
       <mat-cell *matCellDef="let element" > {{element.user_address}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="topping_count">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Topping Count </mat-header-cell>
+    <ng-container matColumnDef="delivery_centre">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Delivery Center </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.delivery_centre}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="topping_name">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Topping Name </mat-header-cell>
+    <ng-container matColumnDef="order_date">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Order Date </mat-header-cell>
       <mat-cell style="margin-left: 35px;" *matCellDef="let element"> {{element.order_date}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="offer_details">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Offer Details </mat-header-cell>
+    <ng-container matColumnDef="cooking_instructions">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Cooking Instructions </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.cooking_instructions}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="discount_price">
-      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Discount Price </mat-header-cell>
+    <ng-container matColumnDef="total_price">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Total Price </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.total_price}} </mat-cell>
     </ng-container>
 
@@ -65,6 +65,10 @@
       <mat-cell  *matCellDef="let element"(click)="onSelect(element.order_id)"><button class="btn btn-success btn-block" type="submit">Confirm</button></mat-cell>
     </ng-container>
     
+    <ng-container matColumnDef="Cancel">
+      <mat-header-cell *matHeaderCellDef style="color:#D5A18E; margin:5px;"> Cancel Order </mat-header-cell>
+      <mat-cell  *matCellDef="let element"(click)="onSelectCancel(element.order_id)"><button class="btn btn-danger btn-block" type="submit" style="margin-left:2px;">Cancel</button></mat-cell>
+    </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
